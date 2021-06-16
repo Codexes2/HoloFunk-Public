@@ -832,7 +832,7 @@ class PlayState extends MusicBeatState
 
 
 		
-		boyfriend = new Boyfriend(758, 430, SONG.player1);
+		boyfriend = new Boyfriend(758, 380, SONG.player1);
 
 		// REPOSITIONING PER STAGE
 		switch (curStage)
@@ -3471,6 +3471,13 @@ class PlayState extends MusicBeatState
 		#end
 
 		if (curSong == 'Tutorial' && dad.curCharacter == 'gf') {
+			if (curBeat % 2 == 1 && dad.animOffsets.exists('danceLeft'))
+				dad.playAnim('danceLeft');
+			if (curBeat % 2 == 0 && dad.animOffsets.exists('danceRight'))
+				dad.playAnim('danceRight');
+		}
+
+		if (curSong == 'Glasses' && dad.curCharacter == 'gf') {
 			if (curBeat % 2 == 1 && dad.animOffsets.exists('danceLeft'))
 				dad.playAnim('danceLeft');
 			if (curBeat % 2 == 0 && dad.animOffsets.exists('danceRight'))
