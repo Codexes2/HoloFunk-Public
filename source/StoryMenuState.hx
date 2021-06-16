@@ -25,10 +25,10 @@ class StoryMenuState extends MusicBeatState
 
 	var weekData:Array<Dynamic> = [
 		['Tutorial'],
-		['Bopeebo', 'Fresh', 'Dad Battle'],
-		['Spookeez', 'South', "Monster"],
-		['Pico', 'Philly Nice', "Blammed"],
-		['Satin Panties', "High", "Milf"],
+		['Live Again', 'RIP', 'Callibattle'],
+		['Sharkventure', 'Mythbuster', "Haachama"],
+		['Botan', 'Lalion', "Poi"],
+		['Friday Night', "Cinderella", "Gangimari", "Hands"],
 		['Cocoa', 'Eggnog', 'Winter Horrorland'],
 		['Senpai', 'Roses', 'Thorns']
 	];
@@ -48,12 +48,12 @@ class StoryMenuState extends MusicBeatState
 
 	var weekNames:Array<String> = [
 		"",
-		"Daddy Dearest",
-		"Spooky Month",
-		"PICO",
-		"MOMMY MUST MURDER",
-		"RED SNOW",
-		"Hating Simulator ft. Moawling"
+		"RAPPING REAPER",
+		"SPOOKY HOLOEN MONTH",
+		"WHITE LION",
+		"KIRYU CLAN FOREVER",
+		"RED SNOW (WIP)",
+		"Friday Night Funkin for PS1 (Placeholder)"
 	];
 
 	var txtWeekTitle:FlxText;

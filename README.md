@@ -1,10 +1,6 @@
-![Kade Engine logo](https://user-images.githubusercontent.com/26305836/110529589-4b4eb600-80ce-11eb-9c44-e899118b0bf0.png)
+![Kade Engine logo](https://github.com/KeatonHoshida/HoloFunk/blob/master/assets/preload/images/logo.png?raw=true)
 
-[![AppVeyor](https://img.shields.io/appveyor/build/KadeDev/Kade-Engine-Windows?label=windows%20build)](https://ci.appveyor.com/project/KadeDev/kade-engine-windows/branch/master/artifacts) [![AppVeyor](https://img.shields.io/appveyor/build/KadeDev/Kade-Engine-Macos?label=macOS%20build)](https://ci.appveyor.com/project/KadeDev/kade-engine-macos/branch/master/artifacts)  [![AppVeyor](https://img.shields.io/appveyor/build/KadeDev/Kade-Engine-Linux?label=linux%20build)](https://ci.appveyor.com/project/KadeDev/kade-engine-linux/branch/master/artifacts) [![AppVeyor](https://img.shields.io/appveyor/build/daniel11420/KadeEngineWeb?label=html5&20build)](https://ci.appveyor.com/project/daniel11420/KadeEngineWeb) [![Discord](https://img.shields.io/discord/808039740464300104?label=discord)](https://discord.gg/MG6GQFh52U) [![GitHub issues](https://img.shields.io/github/issues/KadeDev/Kade-Engine)](https://github.com/KadeDev/Kade-Engine/issues) [![GitHub pull requests](https://img.shields.io/github/issues-pr/KadeDev/Kade-Engine)](https://github.com/KadeDev/Kade-Engine/pulls) []() []()
-
-![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/KadeDev/Kade-Engine/latest) ![GitHub repo size](https://img.shields.io/github/repo-size/KadeDev/Kade-Engine) ![Lines of code](https://img.shields.io/tokei/lines/github/KadeDev/Kade-Engine) ![Supported platforms](https://img.shields.io/badge/supported%20platforms-windows%2C%20macOS%2C%20linux%2C%20html5-blue) ![GitHub all releases](https://img.shields.io/github/downloads/KadeDev/Kade-Engine/total) ![GitHub](https://img.shields.io/github/license/KadeDev/Kade-Engine) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/KadeDev/Kade-Engine?include_prereleases&label=latest%20version) 
-
-# Friday Night Funkin': Kade Engine
+# Hololive Funkin'
 ## Friday Night Funkin'
 **Friday Night Funkin'** is a rhythm game originally made for Ludum Dare 47 "Stuck In a Loop".
 
@@ -14,26 +10,38 @@ Links: **[itch.io page](https://ninja-muffin24.itch.io/funkin) ⋅ [Newgrounds](
 ## Kade Engine
 **Kade Engine** is a mod for Friday Night Funkin', including a full engine rework, replays, and more.
 
-Links: **[GameBanana mod page](https://gamebanana.com/gamefiles/16761) ⋅ [play in browser](https://funkin.puyo.xyz) ⋅ [latest stable release](https://github.com/KadeDev/Kade-Engine/releases/latest) ⋅ [latest development build (windows)](https://ci.appveyor.com/project/KadeDev/kade-engine-windows/branch/master/artifacts) ⋅ [latest development build (macOS)](https://ci.appveyor.com/project/KadeDev/kade-engine-macos/branch/master/artifacts) ⋅ [latest development build (linux)](https://ci.appveyor.com/project/KadeDev/kade-engine-linux/branch/master/artifacts)**
+Links: **[GameBanana mod page](https://gamebanana.com/gamefiles/16761) ⋅ [play in browser](https://funkin.puyo.xyz) ⋅ [latest stable release](https://github.com/KadeDev/Kade-Engine/releases/latest) ⋅ [latest development build (windows)](https://ci.appveyor.com/project/KadeDev/kade-engine-windows/build/artifacts) ⋅ [latest development build (macOS)](https://ci.appveyor.com/project/KadeDev/kade-engine-macos/build/artifacts) ⋅ [latest development build (linux)](https://ci.appveyor.com/project/KadeDev/kade-engine-linux/build/artifacts)**
 
 **REMEMBER**: This is a **mod**. This is not the vanilla game and should be treated as a **modification**. This is not and probably will never be official, so don't get confused.
 
 ## Website ([KadeDev.github.io/kade-engine/](https://KadeDev.github.io/Kade-Engine/))
 If you're looking for documentation, changelogs, or guides, you can find those on the Kade Engine website.
 
-# Previews ([skip](#features))
+## HoloFunk
+**Hololive Funkin'** (Officially shortened to HoloFunk) is a modpack for Friday Night Funkin' built on Kade Engine, featuring multiple song replacements up to and including Week 4, character asset replacements, and more goodies.
 
-![Tutorial (Hard) on Downscroll](https://user-images.githubusercontent.com/15311104/113989685-fa5aea80-9850-11eb-9180-f5819a774c79.gif) ![Milf (Hard) on Downscroll](https://user-images.githubusercontent.com/15311104/113990845-2c208100-9852-11eb-8e6d-f1c9e8439871.gif)
-
-![Roses (Hard) on Upscroll](https://user-images.githubusercontent.com/15311104/113993573-e31dfc00-9854-11eb-82ae-1f29dc8a0b04.png)
-
-![Milf (Hard) on Downscroll](https://user-images.githubusercontent.com/15311104/113991654-f4660900-9852-11eb-8c3d-f3927571f19b.png)
-
-![He malding](https://user-images.githubusercontent.com/15311104/113993693-02b52480-9855-11eb-9975-eb8a7a1be8d1.png)
-
-![Free Play selection screen](https://i.imgur.com/LR0eWIC.png)
-
-![Options Menu](https://i.imgur.com/LBXW9C1.png)
+# The Cast So Far
+ - **Aloe Mano** (Replacing Boyfriend)
+	 - The protagonist of the main campaign, the lore of whom is based around the avatar of a certain Fifth Generation talent who was harassed into retirement. Said talent in real-life has moved on to better things in the months since then, but HoloFunk's version in the meantime needs a bit of help to get back on her feet. While of demonic blood, her strong sense of justice in tandem with her love of singing were what inspired her dream to become the "Diva of the Demon Realm" in the first place.
+	 - Do you have the determination to help HoloFunk's Aloe along in her quest to return to fame?
+ - **Nene Momosuzu** (Replacing Girlfriend)
+	 - The deuteragonist of the main campaign, this universe's version of the bear-seal-alien idol that hundreds of thousands of Hololive fans know and love. Scatterbrained, optimistic, and convinced she's a "perfect being that consists of all living things", it is Nene that gets her close friend out of the house again and convinces her to try out rapping.
+	 - She is an entirely different entity from the Nene who is associated with Pico of *Pico's School* fame, both of whom exist in the HoloFunk universe.
+ - **Calliope Mori** (Week 1)
+	 - HoloFunk's version of *the* rapping reaper of the same name. Seen in a slightly-simplified version of her rapper outfit compared to previous versions which just used her classic costume, Calli is not one to go easy on those that face her in a rap battle. That applies even if the challenger was asked to take her on by a third party in hopes of getting said challenger back into practice...
+	 - Her songs include "Live Again" (Live Again - Bopeebo Remix), "RAP" (失礼しますが、RIP♡ - Fresh Remix), and "Calli Battle" (Off With Their Heads - Dad Battle Remix).
+ - **Gura Gawr and Amelia Watson** (Week 2)
+	 - The closest two friends out of all of hololive EN's girls. On their way out of Japan (with two guests that have yet to be implemented), Ame and Gura got lost due to the latter's infamously poor sense of direction. A thunderstorm started to break out before Amelia could take the helm, and she left her time travel watch at home, so the two fled into the nearest house to take shelter. They're surprised to find out Nene was also there, killing time with a girl the time traveler and shark didn't debut in time to meet. Who knows how they got around the language barrier, but a rap battle quickly ensues.
+	 - Their songs include "Sharkventure" and "Mythbuster" (Misteavous Myth-Buster).
+ - **HAACHAMA** (REPLACING MONSTER)
+	 - HAACHAMA CHAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-
+ - **Botan Shishiro** (Week 3)
+	 - A white lion girl well-versed in computer technology and a competitive-level expert in first-person shooters. This universe's incarnation was a hitman prior to phasing out of that line work to pursue a (relatively) safe career at hololive. Hearing of and unwilling to deal with a potential rival's return, Daddy Dearest hires Botan to find "a certain member of a demon clan opposing his" and "teach her a lesson". But like the situation between Pico and BF, Botan was only given a location and not a name, and when she finds out the intended target is *Aloe*, she refuses to do what the job entailed and instead challenges her to a rap battle, though on friendlier terms.
+	 - In lieu of tracks closely associated with her, her songs are simple covers of Pico's songs, dubbed "Botan" (Pico Remix), "La-Lion" (Philly Nice Remix), and "Poi" (Blammed Remix).
+ - **Coco Kiryu** (Week 4)
+	 - The bilingual, playful, yet outgoing dragon in charge of the Kiryu Clan. Known for, amongst other things, her penchant for profanity, bold sense of humor, and love of the *Yakuza* (龍が如く *Ryuu Ga Gotoku* in Japan) series, Coco originally joined hololive to work off the debt she acquired after crashing into the hololive building and putting YAGOO in the hospital. Though she ended up earning enough to not only pay off these debts but also move into a nicer apartment with her buddy Kanata (seen as the limo driver), Coco would ultimately stay in Hololive until deciding to leave on July 1st (A day which has still yet to pass as of the Week 4 Update's release).
+	 - The lore surrounding her reasons to rap with Aloe is undecided as of this time.
+	 - Her songs include "Friday Night" (Cover), "Cinderella" (24 Hour Cinderella Cover), "Gangimari" (Gangimari Dragon), and "Hands" (Cover).
 
 # Features
 

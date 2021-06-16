@@ -457,6 +457,54 @@ class PlayState extends MusicBeatState
 					fastCar = new FlxSprite(-300, 160).loadGraphic(Paths.image('limo/fastCarLol','week4'));
 					// add(limo);
 			}
+			case 'limonight':
+			{
+					curStage = 'limo';
+					defaultCamZoom = 0.90;
+
+					var skyBG:FlxSprite = new FlxSprite(-120, -50).loadGraphic(Paths.image('limo/limoNight','week4'));
+					skyBG.scrollFactor.set(0.1, 0.1);
+					add(skyBG);
+
+					var bgLimo:FlxSprite = new FlxSprite(-200, 480);
+					bgLimo.frames = Paths.getSparrowAtlas('limo/bgLimo','week4');
+					bgLimo.animation.addByPrefix('drive', "background limo pink", 24);
+					bgLimo.animation.play('drive');
+					bgLimo.scrollFactor.set(0.4, 0.4);
+					add(bgLimo);
+					if(FlxG.save.data.distractions){
+						grpLimoDancers = new FlxTypedGroup<BackgroundDancer>();
+						add(grpLimoDancers);
+	
+						for (i in 0...5)
+						{
+								var dancer:BackgroundDancer = new BackgroundDancer((370 * i) + 130, bgLimo.y - 400);
+								dancer.scrollFactor.set(0.4, 0.4);
+								grpLimoDancers.add(dancer);
+						}
+					}
+
+					var overlayShit:FlxSprite = new FlxSprite(-500, -600).loadGraphic(Paths.image('limo/limoOverlay','week4'));
+					overlayShit.alpha = 0.5;
+					// add(overlayShit);
+
+					// var shaderBullshit = new BlendModeEffect(new OverlayShader(), FlxColor.RED);
+
+					// FlxG.camera.setFilters([new ShaderFilter(cast shaderBullshit.shader)]);
+
+					// overlayShit.shader = shaderBullshit;
+
+					var limoTex = Paths.getSparrowAtlas('limo/limoDrive','week4');
+
+					limo = new FlxSprite(-120, 550);
+					limo.frames = limoTex;
+					limo.animation.addByPrefix('drive', "Limo stage", 24);
+					limo.animation.play('drive');
+					limo.antialiasing = true;
+
+					fastCar = new FlxSprite(-300, 160).loadGraphic(Paths.image('limo/fastCarLol','week4'));
+					// add(limo);
+			}
 			case 'mall':
 			{
 					curStage = 'mall';
@@ -760,7 +808,7 @@ class PlayState extends MusicBeatState
 			case "monster":
 				dad.y += 100;
 			case 'monster-christmas':
-				dad.y += 130;
+				dad.y += 100;
 			case 'dad':
 				camPos.x += 400;
 			case 'pico':
@@ -784,14 +832,14 @@ class PlayState extends MusicBeatState
 
 
 		
-		boyfriend = new Boyfriend(770, 450, SONG.player1);
+		boyfriend = new Boyfriend(758, 430, SONG.player1);
 
 		// REPOSITIONING PER STAGE
 		switch (curStage)
 		{
 			case 'limo':
 				boyfriend.y -= 220;
-				boyfriend.x += 260;
+				boyfriend.x += 270;
 				if(FlxG.save.data.distractions){
 					resetFastCar();
 					add(fastCar);
@@ -1005,7 +1053,7 @@ class PlayState extends MusicBeatState
 
 		if (isStoryMode)
 		{
-			switch (StringTools.replace(curSong," ", "-").toLowerCase())
+			switch (curSong.toLowerCase())
 			{
 				case "winter-horrorland":
 					var blackScreen:FlxSprite = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
@@ -1975,10 +2023,10 @@ class PlayState extends MusicBeatState
 								}
 							}
 						}
-						case 'Bopeebo':
+						case 'Live Again':
 						{
 							// Where it starts || where it ends
-							if(curBeat > 5 && curBeat < 130)
+							if(curBeat > 8 && curBeat < 144)
 							{
 								if(curBeat % 8 == 7)
 								{
@@ -2769,14 +2817,8 @@ class PlayState extends MusicBeatState
 	
 			var comboSplit:Array<String> = (combo + "").split('');
 
-			// make sure we have 3 digits to display (looks weird otherwise lol)
-			if (comboSplit.length == 1)
-			{
-				seperatedScore.push(0);
-				seperatedScore.push(0);
-			}
-			else if (comboSplit.length == 2)
-				seperatedScore.push(0);
+			if (comboSplit.length == 2)
+				seperatedScore.push(0); // make sure theres a 0 in front or it looks weird lol!
 
 			for(i in 0...comboSplit.length)
 			{
@@ -2808,7 +2850,8 @@ class PlayState extends MusicBeatState
 				numScore.velocity.y -= FlxG.random.int(140, 160);
 				numScore.velocity.x = FlxG.random.float(-5, 5);
 	
-				add(numScore);
+				if (combo >= 10 || combo == 0)
+					add(numScore);
 	
 				FlxTween.tween(numScore, {alpha: 0}, 0.2, {
 					onComplete: function(tween:FlxTween)
@@ -2917,43 +2960,36 @@ class PlayState extends MusicBeatState
 					var possibleNotes:Array<Note> = []; // notes that can be hit
 					var directionList:Array<Int> = []; // directions that can be hit
 					var dumbNotes:Array<Note> = []; // notes to kill later
-					var directionsAccounted:Array<Bool> = [false,false,false,false]; // we don't want to do judgments for more than one presses
-					
+		 
 					notes.forEachAlive(function(daNote:Note)
 					{
 						if (daNote.canBeHit && daNote.mustPress && !daNote.tooLate && !daNote.wasGoodHit)
 						{
-							if (!directionsAccounted[daNote.noteData])
+							if (directionList.contains(daNote.noteData))
 							{
-								if (directionList.contains(daNote.noteData))
+								for (coolNote in possibleNotes)
 								{
-									directionsAccounted[daNote.noteData] = true;
-									for (coolNote in possibleNotes)
-									{
-										if (coolNote.noteData == daNote.noteData && Math.abs(daNote.strumTime - coolNote.strumTime) < 10)
-										{ // if it's the same note twice at < 10ms distance, just delete it
-											// EXCEPT u cant delete it in this loop cuz it fucks with the collection lol
-											dumbNotes.push(daNote);
-											break;
-										}
-										else if (coolNote.noteData == daNote.noteData && daNote.strumTime < coolNote.strumTime)
-										{ // if daNote is earlier than existing note (coolNote), replace
-											possibleNotes.remove(coolNote);
-											possibleNotes.push(daNote);
-											break;
-										}
+									if (coolNote.noteData == daNote.noteData && Math.abs(daNote.strumTime - coolNote.strumTime) < 10)
+									{ // if it's the same note twice at < 10ms distance, just delete it
+										// EXCEPT u cant delete it in this loop cuz it fucks with the collection lol
+										dumbNotes.push(daNote);
+										break;
+									}
+									else if (coolNote.noteData == daNote.noteData && daNote.strumTime < coolNote.strumTime)
+									{ // if daNote is earlier than existing note (coolNote), replace
+										possibleNotes.remove(coolNote);
+										possibleNotes.push(daNote);
+										break;
 									}
 								}
-								else
-								{
-									possibleNotes.push(daNote);
-									directionList.push(daNote.noteData);
-								}
+							}
+							else
+							{
+								possibleNotes.push(daNote);
+								directionList.push(daNote.noteData);
 							}
 						}
 					});
-
-					trace('\nCURRENT LINE:\n' + directionsAccounted);
 		 
 					for (note in dumbNotes)
 					{
@@ -3487,11 +3523,103 @@ class PlayState extends MusicBeatState
 			boyfriend.playAnim('idle');
 		}
 		
+		if (curSong == 'Live Again') // Hey and Cheer animations for Aloe and Nene
+			{
+				if (curBeat == 8)
+					{
+						boyfriend.playAnim('hey', true);
+						gf.playAnim('cheer', true);
+					}
+				if (curBeat == 16)
+					{
+						boyfriend.playAnim('hey', true);
+						gf.playAnim('cheer', true);
+					}
+				if (curBeat == 24)
+					{
+						boyfriend.playAnim('hey', true);
+						gf.playAnim('cheer', true);
+					}
+				if (curBeat == 32)
+					{
+						boyfriend.playAnim('hey', true);
+						gf.playAnim('cheer', true);
+					}
+				if (curBeat == 40)
+					{
+						gf.playAnim('cheer', true);
+					}
+				if (curBeat == 56)
+					{
+						gf.playAnim('cheer', true);
+					}
+				if (curBeat == 64)
+					{
+						boyfriend.playAnim('hey', true);
+						gf.playAnim('cheer', true);
+					}
+				if (curBeat == 72)
+					{
+						gf.playAnim('cheer', true);
+					}
+				if (curBeat == 88)
+					{
+						boyfriend.playAnim('hey', true);
+						gf.playAnim('cheer', true);
+					}
+				if (curBeat == 96)
+					{
+						gf.playAnim('cheer', true);
+					}
+				if (curBeat == 104)
+					{
+						gf.playAnim('cheer', true);
+					}
+				if (curBeat == 112)
+					{
+						gf.playAnim('cheer', true);
+					}
+				if (curBeat == 120)
+					{
+						gf.playAnim('cheer', true);
+					}
+				if (curBeat == 128)
+					{
+						gf.playAnim('cheer', true);
+					}
+				if (curBeat == 136)
+					{
+						gf.playAnim('cheer', true);
+					}
+				if (curBeat == 144)
+					{
+						boyfriend.playAnim('hey', true);
+						gf.playAnim('cheer', true);
+					}
+			}
 
-		if (curBeat % 8 == 7 && curSong == 'Bopeebo')
-		{
-			boyfriend.playAnim('hey', true);
-		}
+
+			if (dad.curCharacter == 'spooky' && SONG.song.toLowerCase() == 'sharkventure')
+			{
+
+				if (curBeat == 39)
+					{
+						dad.playAnim('guraA', true);
+					}
+				if (curBeat == 55)
+					{
+						dad.playAnim('ameHic', true);
+					}
+			}
+
+			if (dad.curCharacter == 'spooky' && SONG.song.toLowerCase() == 'mythbuster')
+				{
+	
+					if (curBeat == 216)
+						{
+							dad.playAnim('ameHic', true);
+						}
+				}
 
 		if (curBeat % 16 == 15 && SONG.song == 'Tutorial' && dad.curCharacter == 'gf' && curBeat > 16 && curBeat < 48)
 			{

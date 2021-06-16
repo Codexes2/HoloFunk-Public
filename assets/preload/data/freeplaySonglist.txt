@@ -1,16 +1,17 @@
 Tutorial:gf:1
-Bopeebo:dad:1
-Fresh:dad:1
-Dad Battle:dad:1
-Spookeez:spooky:2
-South:spooky:2
-Monster:monster:2
-Pico:pico:3
-Philly Nice:pico:3
-Blammed:pico:3
-Satin Panties:mom:4
-High:mom:4
-Milf:mom:4
+Live Again:dad:1
+RIP:dad:1
+Callibattle:dad:1
+Sharkventure:spooky:2
+Mythbuster:spooky:2
+Haachama:monster:2
+Botan:pico:3
+Lalion:pico:3
+Poi:pico:3
+Friday Night:mom:4
+Cinderella:mom:4
+Gangimari:mom:4
+Hands:mom:4
 Cocoa:parents-christmas:5
 Eggnog:parents-christmas:5
 Winter Horrorland:monster-christmas:5
