@@ -7,7 +7,6 @@ mom
 mom-car
 bf-car
 parents-christmas
-wide-christmas
 monster-christmas
 bf-christmas
 gf-christmas
