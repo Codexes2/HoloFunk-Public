@@ -438,6 +438,27 @@ class ScrollSpeedOption extends Option
 	}
 }
 
+class NoteStyles extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.notetheme = !FlxG.save.data.notetheme;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Note Style " + (!FlxG.save.data.notetheme ? "NORMAL" : "HOLOFUNK");
+	}
+
+}
 
 class RainbowFPSOption extends Option
 {

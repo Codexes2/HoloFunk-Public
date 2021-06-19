@@ -320,22 +320,7 @@ class PlayState extends MusicBeatState
 		switch (songLowercase)
 		{
 			case 'tutorial':
-				dialogue = ["Hey you're pretty cute.", 'Use the arrow keys to keep up \nwith me singing.'];
-			case 'bopeebo':
-				dialogue = [
-					'HEY!',
-					"You think you can just sing\nwith my daughter like that?",
-					"If you want to date her...",
-					"You're going to have to go \nthrough ME first!"
-				];
-			case 'fresh':
-				dialogue = ["Not too shabby boy.", ""];
-			case 'dadbattle':
-				dialogue = [
-					"gah you think you're hot stuff?",
-					"If you can beat me here...",
-					"Only then I will even CONSIDER letting you\ndate my daughter!"
-				];
+				dialogue = CoolUtil.coolTextFile(Paths.txt('tutorial/tutorialDialogue'));
 			case 'senpai':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('senpai/senpaiDialogue'));
 			case 'roses':
@@ -816,6 +801,8 @@ class PlayState extends MusicBeatState
 				dad.y += 300;
 			case 'parents-christmas':
 				dad.x -= 500;
+			case 'wide-christmas':
+				dad.x -= 500;
 			case 'senpai':
 				dad.x += 150;
 				dad.y += 360;
@@ -970,6 +957,23 @@ class PlayState extends MusicBeatState
 				songName.cameras = [camHUD];
 			}
 
+	var characterCol:Array<String> = CoolUtil.coolTextFile(Paths.txt('characterList'));
+	var col:Array<FlxColor> = [
+		0xFF800080, // ALOE
+		0xFFE5ACB6, // CALLIOPE
+		0xFFFFFF66, // NENE
+		0xFF57B692, // AMESAME
+		0xFFFFFAFA, // BOTAN
+		0xFFffa500, // COCO
+		0xFFffa500, // COCO-CAR
+		0xFF800080, // ALOE-CAR
+		0xFF000000, // PARENTS-CHRISTMAS
+		0xFF000000, // WIDE-CHRISTMAS
+		0xFF191919, // HAACHAMA-CHRISTMAS
+		0xFF800080, // ALOE-CHRISTMAS
+		0xFFFFFF66, // NENE-CHRISTMAS
+		0xFF191919, // HAACHAMA
+	];
 		healthBarBG = new FlxSprite(0, FlxG.height * 0.9).loadGraphic(Paths.image('healthBar'));
 		if (FlxG.save.data.downscroll)
 			healthBarBG.y = 50;
@@ -980,7 +984,9 @@ class PlayState extends MusicBeatState
 		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8), this,
 			'health', 0, 2);
 		healthBar.scrollFactor.set();
-		healthBar.createFilledBar(0xFFFF0000, 0xFF66FF33);
+		var curcol:FlxColor = col[characterCol.indexOf(dad.curCharacter)]; // Dad Icon
+		var curcol2:FlxColor = col[characterCol.indexOf(boyfriend.curCharacter)]; // Bf Icon
+		healthBar.createFilledBar(curcol, curcol2); // Use those colors
 		// healthBar
 		add(healthBar);
 
@@ -1083,6 +1089,8 @@ class PlayState extends MusicBeatState
 							});
 						});
 					});
+				case 'tutorial':
+					holoIntro(doof);
 				case 'senpai':
 					schoolIntro(doof);
 				case 'roses':
@@ -1110,6 +1118,96 @@ class PlayState extends MusicBeatState
 	}
 
 	function schoolIntro(?dialogueBox:DialogueBox):Void
+	{
+		var black:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
+		black.scrollFactor.set();
+		add(black);
+
+		var red:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, 0xFFff1b31);
+		red.scrollFactor.set();
+
+		var senpaiEvil:FlxSprite = new FlxSprite();
+		senpaiEvil.frames = Paths.getSparrowAtlas('weeb/senpaiCrazy');
+		senpaiEvil.animation.addByPrefix('idle', 'Senpai Pre Explosion', 24, false);
+		senpaiEvil.setGraphicSize(Std.int(senpaiEvil.width * 6));
+		senpaiEvil.scrollFactor.set();
+		senpaiEvil.updateHitbox();
+		senpaiEvil.screenCenter();
+
+		// pre lowercasing the song name (schoolIntro)
+		var songLowercase = StringTools.replace(PlayState.SONG.song, " ", "-").toLowerCase();
+			switch (songLowercase) {
+				case 'dad-battle': songLowercase = 'dadbattle';
+				case 'philly-nice': songLowercase = 'philly';
+			}
+		if (songLowercase == 'roses' || songLowercase == 'thorns')
+		{
+			remove(black);
+
+			if (songLowercase == 'thorns')
+			{
+				add(red);
+			}
+		}
+
+		new FlxTimer().start(0.3, function(tmr:FlxTimer)
+		{
+			black.alpha -= 0.15;
+
+			if (black.alpha > 0)
+			{
+				tmr.reset(0.3);
+			}
+			else
+			{
+				if (dialogueBox != null)
+				{
+					inCutscene = true;
+
+					if (songLowercase == 'thorns')
+					{
+						add(senpaiEvil);
+						senpaiEvil.alpha = 0;
+						new FlxTimer().start(0.3, function(swagTimer:FlxTimer)
+						{
+							senpaiEvil.alpha += 0.15;
+							if (senpaiEvil.alpha < 1)
+							{
+								swagTimer.reset();
+							}
+							else
+							{
+								senpaiEvil.animation.play('idle');
+								FlxG.sound.play(Paths.sound('Senpai_Dies'), 1, false, null, true, function()
+								{
+									remove(senpaiEvil);
+									remove(red);
+									FlxG.camera.fade(FlxColor.WHITE, 0.01, true, function()
+									{
+										add(dialogueBox);
+									}, true);
+								});
+								new FlxTimer().start(3.2, function(deadTime:FlxTimer)
+								{
+									FlxG.camera.fade(FlxColor.WHITE, 1.6, false);
+								});
+							}
+						});
+					}
+					else
+					{
+						add(dialogueBox);
+					}
+				}
+				else
+					startCountdown();
+
+				remove(black);
+			}
+		});
+	}
+
+	function holoIntro(?dialogueBox:DialogueBox):Void
 	{
 		var black:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
 		black.scrollFactor.set();
@@ -1577,7 +1675,7 @@ class PlayState extends MusicBeatState
 					}
 				
 				case 'normal':
-					babyArrow.frames = Paths.getSparrowAtlas('NOTE_assets');
+					babyArrow.frames = Paths.getSparrowAtlas('notes/' + FlxG.save.data.notetheme + '_assets');
 					babyArrow.animation.addByPrefix('green', 'arrowUP');
 					babyArrow.animation.addByPrefix('blue', 'arrowDOWN');
 					babyArrow.animation.addByPrefix('purple', 'arrowLEFT');
@@ -1611,7 +1709,7 @@ class PlayState extends MusicBeatState
 						}
 
 				default:
-					babyArrow.frames = Paths.getSparrowAtlas('NOTE_assets');
+					babyArrow.frames = Paths.getSparrowAtlas('notes/' + FlxG.save.data.notetheme + '_assets');
 					babyArrow.animation.addByPrefix('green', 'arrowUP');
 					babyArrow.animation.addByPrefix('blue', 'arrowDOWN');
 					babyArrow.animation.addByPrefix('purple', 'arrowLEFT');
