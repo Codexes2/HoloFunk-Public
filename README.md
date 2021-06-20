@@ -67,3 +67,11 @@ This game was made with love to Newgrounds and its community. Extra love to Tom 
 ### Kade Engine
 - [KadeDeveloper](https://twitter.com/KadeDeveloper) - Maintainer and lead programmer
 - [The contributors](https://github.com/KadeDev/Kade-Engine/graphs/contributors)
+
+### Hololive Funkin'
+- [Keaton Hoshida](https://twitter.com/KadeDeveloper) - Director, Primary Animator/Artist
+- [CoolStalker](https://twitter.com/TheCoolStalker) - Lead Charter
+- [Galactigal](https://twitter.com/GGalactigal) - Primary Musician, Secondary Animator/Artist
+- [Awoofle](https://gamebanana.com/members/1878760) - Primary Programmer
+- [Dangermad](https://twitter.com/Dangermad6691) - Secondary Programmer
+- [Keki](https://twitter.com/SaltyHotcakes) and [C013 Huff](https://twitter.com/C013Huff) - Secondary Musicians
