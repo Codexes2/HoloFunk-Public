@@ -23,10 +23,12 @@ If you're looking for documentation, changelogs, or guides, you can find those o
 # The Cast So Far
  - **Aloe Mano** (Replacing Boyfriend)
 	 - The protagonist of the main campaign, the lore of whom is based around the avatar of a certain Fifth Generation talent who was harassed into retirement. In a universe where "reincarnation" isn't an option like in Real Life's VTuber industry, HoloFunk's Aloe needs a bit of help and encouragement on Nene's end to get back on her feet. While of demonic blood, her strong sense of justice in tandem with her love of singing were what inspired her dream to become the "Diva of the Demon Realm" in the first place.
-	 - Do you have the determination to help HoloFunk's Aloe along in her quest to return to fame?
+	 - She loves Nene and would do anything to keep her and the others safe, but lacks the confidence to confess her attraction.
+	 - HoloFunk casts her as nineteen, with would-be discrepancies that result from it being attributed to her being a late bloomer in terms of horn growth.
  - **Nene Momosuzu** (Tutorial; Replacing Girlfriend)
 	 - The deuteragonist of the main campaign, this universe's version of the bear-seal-alien idol that hundreds of thousands of Hololive fans know and love. Scatterbrained, optimistic, and convinced she's a "perfect being that consists of all living things", it is Nene that gets her close friend out of the house again and convinces her to try out rapping.
 	 - She is an entirely different entity from the Nene who is associated with Pico of *Pico's School* fame, both of whom exist in the HoloFunk universe.
+	 - Though she had her (joking?) flings with Ina (in the EN x Gen 5 among us collab) and apparently Okayu (in a holoGra animation), it is Aloe she has a soft spot for, but it's her
  - **Calliope Mori** (Week 1)
 	 - HoloFunk's version of *the* rapping reaper of the same name. Seen in a slightly-simplified version of her rapper outfit compared to previous versions which just used her classic costume, Calli is not one to go easy on those that face her in a rap battle. And it shows - she's the hardest opponent in the mod so far!
 	 - Her songs include "Live Again" (Live Again - Bopeebo Remix), "RAP" (失礼しますが、RIP♡ - Fresh Remix), and "Calli Battle" (Off With Their Heads - Dad Battle Remix).
