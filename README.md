@@ -22,7 +22,7 @@ If you're looking for documentation, changelogs, or guides, you can find those o
 
 # The Cast So Far (ALTERNATIVE CAMPAIGN)
  - **Fubuki Shirakami** (Replacing Boyfriend)
-	 - A fox girl who is not only a member of hololive's first generation of VTubers, but also the first member of a four-girl unit called hololive GAMERS. A few weeks after the start of the Main Campaign, Fubuki was hired by a disguised Daddy Dearest to track down a burglar who allegedly stole something precious from his wife, and is following the footsteps of Aloe and Nene to do so.
+	 - A fox girl who is not only a member of hololive's first generation of VTubers, but also the first member of a four-girl unit called hololive GAMERS. A few weeks after the start of the Main Campaign, Fubuki was hired (read, manipulated) by a disguised Daddy Dearest (in)to track(ing) down a burglar who allegedly stole something precious from his wife, and is following the footsteps of Aloe and Nene to do so.
 	 - She has a friendly disposition and a number of short-skit videos on Twitter and Youtube, and likes to try out games from several different genres.
  - **Mio Ookami** (Replacing Girlfriend)
 	 - A "FAQing cute" wolf girl who is part of the hololive GAMERS unit alongside Fubuki. She is often described as mature and responsible by fans and hololivers alike, and this along with other qualities gives her a motherly sort of aura that hasn't gone unnoticed by the fanbase. She was asked by the rest of GAMERS to keep Fubuki out of trouble the fox girl is on the hunt for the 'necklace thief'.
