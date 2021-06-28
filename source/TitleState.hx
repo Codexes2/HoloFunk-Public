@@ -181,7 +181,10 @@ class TitleState extends MusicBeatState
 		// logoBl.color = FlxColor.BLACK;
 
 		gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
-		gfDance.frames = Paths.getSparrowAtlas('gfDanceTitle');
+		if (FlxG.save.data.campaign != null)
+			gfDance.frames = Paths.getSparrowAtlas( FlxG.save.data.campaign + '/gfDanceTitle');
+		else
+			gfDance.frames = Paths.getSparrowAtlas('aloe/gfDanceTitle');
 		gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
 		gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
 		gfDance.antialiasing = true;
@@ -319,15 +322,15 @@ class TitleState extends MusicBeatState
 						OutdatedSubState.currChanges = returnedData[1];
 						FlxG.switchState(new OutdatedSubState());
 					}
+					else if (FlxG.save.data.campaign == null)
+						FlxG.switchState(new CharacterSelection());
 					else
-					{
 						FlxG.switchState(new MainMenuState());
-					}
 				}
 				
 				http.onError = function (error) {
 				  trace('error: $error');
-				  FlxG.switchState(new MainMenuState()); // fail but we go anyway
+				  FlxG.switchState(new CharacterSelection()); // fail but we go anyway
 				}
 				
 				http.request();

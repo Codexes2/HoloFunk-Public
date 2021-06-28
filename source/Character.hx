@@ -32,7 +32,7 @@ class Character extends FlxSprite
 		{
 			case 'gf':
 				// GIRLFRIEND CODE
-				tex = Paths.getSparrowAtlas('characters/GF_assets');
+				tex = Paths.getSparrowAtlas('characters/' + FlxG.save.data.campaign + '/GF_assets');
 				frames = tex;
 				animation.addByPrefix('cheer', 'GF Cheer', 24, false);
 				animation.addByPrefix('singLEFT', 'GF left note', 24, false);
@@ -46,24 +46,45 @@ class Character extends FlxSprite
 				animation.addByIndices('hairFall', "GF Dancing Beat Hair Landing", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "", 24, false);
 				animation.addByPrefix('scared', 'GF FEAR', 24);
 
-				addOffset('cheer', 0, 33);
-				addOffset('sad', -2, 13);
-				addOffset('danceLeft', 0, 31);
-				addOffset('danceRight', 0, 31);
+				if (FlxG.save.data.campaign == 'aloe')
+					{
+					addOffset('cheer', 0, 33);
+					addOffset('sad', -2, 13);
+					addOffset('danceLeft', 0, 31);
+					addOffset('danceRight', 0, 31);
 
-				addOffset("singUP", 0, 46);
-				addOffset("singRIGHT", 0, 27);
-				addOffset("singLEFT", 0, 16);
-				addOffset("singDOWN", 0, 21);
-				addOffset('hairBlow', 45, 31);
-				addOffset('hairFall', 0, 31);
+					addOffset("singUP", 0, 46);
+					addOffset("singRIGHT", 0, 27);
+					addOffset("singLEFT", 0, 16);
+					addOffset("singDOWN", 0, 21);
+					addOffset('hairBlow', 45, 31);
+					addOffset('hairFall', 0, 31); 
 
-				addOffset('scared', -2, 28);
+					addOffset('scared', -2, 28);
+					}
+				else
+					{
+					addOffset('cheer', 0, 17);
+					addOffset('sad', -2, 16);
+					addOffset('danceLeft', 0, 20);
+					addOffset('danceRight', 0, 20);
+
+					addOffset("singUP", 0, 32);
+					addOffset("singRIGHT", 0, 1);
+					addOffset("singLEFT", 0, 17);
+					addOffset("singDOWN", 0, 10);
+					addOffset('hairBlow', 0, 20);
+					addOffset('hairFall', 0, 20);
+
+					addOffset('scared', -2, -2);
+					}
+
+				
 
 				playAnim('danceRight');
 
 			case 'gf-christmas':
-				tex = Paths.getSparrowAtlas('characters/gfChristmas');
+				tex = Paths.getSparrowAtlas('characters/' + FlxG.save.data.campaign +'/gfChristmas');
 				frames = tex;
 				animation.addByPrefix('cheer', 'GF Cheer', 24, false);
 				animation.addByPrefix('singLEFT', 'GF left note', 24, false);
@@ -286,7 +307,7 @@ class Character extends FlxSprite
 				flipX = true;
 
 			case 'bf':
-				var tex = Paths.getSparrowAtlas('characters/BOYFRIEND', 'shared');
+				var tex = Paths.getSparrowAtlas('characters/' + FlxG.save.data.campaign +'/BOYFRIEND', 'shared');
 				frames = tex;
 
 				trace(tex.frames.length);
@@ -308,27 +329,46 @@ class Character extends FlxSprite
 
 				animation.addByPrefix('scared', 'BF idle shaking', 24);
 
-				addOffset('idle');
-				addOffset("singUP", -25, 29);
-				addOffset("singRIGHT", -27, -1);
-				addOffset("singLEFT", -12, -9);
-				addOffset("singDOWN", 34, -49);
-				addOffset("singUPmiss", -7, 33);
-				addOffset("singRIGHTmiss", -12, 22);
-				addOffset("singLEFTmiss", -13, -2);
-				addOffset("singDOWNmiss", 24, -19);
-				addOffset("hey", -10, -2);
-				addOffset('firstDeath', 67, 7);
-				addOffset('deathLoop', 66, 4);
-				addOffset('deathConfirm', 67, 57);
-				addOffset('scared', 16, 1);
+				if (FlxG.save.data.campaign == 'aloe')
+					{
+						addOffset('idle');
+						addOffset("singUP", -25, 29);
+						addOffset("singRIGHT", -27, -1);
+						addOffset("singLEFT", -12, -9);
+						addOffset("singDOWN", 34, -49);
+						addOffset("singUPmiss", -7, 33);
+						addOffset("singRIGHTmiss", -12, 22);
+						addOffset("singLEFTmiss", -13, -2);
+						addOffset("singDOWNmiss", 24, -19);
+						addOffset("hey", -10, -2);
+						addOffset('firstDeath', 67, 7);
+						addOffset('deathLoop', 66, 4);
+						addOffset('deathConfirm', 67, 57);
+						addOffset('scared', 16, 1);
+					}
+				else
+					{
+						addOffset("singUP", 4, 13);
+						addOffset("singRIGHT", 3, -1);
+						addOffset("singLEFT", 28, 11);
+						addOffset("singDOWN", 5, 1);
+						addOffset("singUPmiss", 3, 11);
+						addOffset("singRIGHTmiss", 2, 0);
+						addOffset("singLEFTmiss", 37, 18);
+						addOffset("singDOWNmiss", 4, 1);
+						addOffset("hey", 0, 0);
+						addOffset('firstDeath', 7, 8);
+						addOffset('deathLoop', 3, 1);
+						addOffset('deathConfirm', 0, 0);
+						addOffset('scared', 1, 1);
+					}
 
 				playAnim('idle');
 
 				flipX = true;
 
 			case 'bf-christmas':
-				var tex = Paths.getSparrowAtlas('characters/bfChristmas');
+				var tex = Paths.getSparrowAtlas('characters/' + FlxG.save.data.campaign + '/bfChristmas');
 				frames = tex;
 				animation.addByPrefix('idle', 'BF idle dance', 24, false);
 				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
@@ -341,22 +381,37 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
 				animation.addByPrefix('hey', 'BF HEY', 24, false);
 
-				addOffset('idle');
-				addOffset("singUP", -25, 29);
-				addOffset("singRIGHT", -27, -1);
-				addOffset("singLEFT", -12, -9);
-				addOffset("singDOWN", 34, -49);
-				addOffset("singUPmiss", -7, 33);
-				addOffset("singRIGHTmiss", -12, 22);
-				addOffset("singLEFTmiss", -13, -2);
-				addOffset("singDOWNmiss", 24, -19);
-				addOffset("hey", -10, -2);
+				if (FlxG.save.data.campaign)
+					{
+						addOffset('idle');
+						addOffset("singUP", -25, 29);
+						addOffset("singRIGHT", -27, -1);
+						addOffset("singLEFT", -12, -9);
+						addOffset("singDOWN", 34, -49);
+						addOffset("singUPmiss", -7, 33);
+						addOffset("singRIGHTmiss", -12, 22);
+						addOffset("singLEFTmiss", -13, -2);
+						addOffset("singDOWNmiss", 24, -19);
+						addOffset("hey", -10, -2);
+					}
+				else
+					{
+						addOffset("singUP", 4, 13);
+						addOffset("singRIGHT", 3, -1);
+						addOffset("singLEFT", 28, 11);
+						addOffset("singDOWN", 5, 1);
+						addOffset("singUPmiss", 3, 11);
+						addOffset("singRIGHTmiss", 2, 0);
+						addOffset("singLEFTmiss", 37, 18);
+						addOffset("singDOWNmiss", 4, 1);
+						addOffset("hey", 0, 0);
+					}
 
 				playAnim('idle');
 
 				flipX = true;
 			case 'bf-car':
-				var tex = Paths.getSparrowAtlas('characters/bfCar');
+				var tex = Paths.getSparrowAtlas('characters/' + FlxG.save.data.campaign + '/bfCar');
 				frames = tex;
 				animation.addByPrefix('idle', 'BF idle dance', 24, false);
 				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
@@ -368,15 +423,30 @@ class Character extends FlxSprite
 				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
 				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
 
-				addOffset('idle', 0, 0);
-				addOffset("singUP", -3, 24);
-				addOffset("singRIGHT", -12, -1);
-				addOffset("singLEFT", -2, -11);
-				addOffset("singDOWN", 30, -49);
-				addOffset("singUPmiss", 0, 25);
-				addOffset("singRIGHTmiss", -12, 12);
-				addOffset("singLEFTmiss", -4, -2);
-				addOffset("singDOWNmiss", 27, -32);
+				if (FlxG.save.data.campaign == 'aloe')
+					{
+						addOffset('idle', 0, 0);
+						addOffset("singUP", -3, 24);
+						addOffset("singRIGHT", -12, -1);
+						addOffset("singLEFT", -2, -11);
+						addOffset("singDOWN", 30, -49);
+						addOffset("singUPmiss", 0, 25);
+						addOffset("singRIGHTmiss", -12, 12);
+						addOffset("singLEFTmiss", -4, -2);
+						addOffset("singDOWNmiss", 27, -32);
+					}
+				else
+					{
+						addOffset('idle');
+						addOffset("singUP", 4, 13);
+						addOffset("singRIGHT", 3, -1);
+						addOffset("singLEFT", 28, 11);
+						addOffset("singDOWN", 5, 1);
+						addOffset("singUPmiss", 3, 11);
+						addOffset("singRIGHTmiss", 2, 0);
+						addOffset("singLEFTmiss", 37, 18);
+						addOffset("singDOWNmiss", 4, 1);
+					}
 				playAnim('idle');
 
 				flipX = true;

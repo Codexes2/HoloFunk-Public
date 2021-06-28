@@ -460,7 +460,7 @@ class PlayState extends MusicBeatState
 					add(skyBG);
 
 					var bgLimo:FlxSprite = new FlxSprite(-200, 480);
-					bgLimo.frames = Paths.getSparrowAtlas('limo/bgLimo','week4');
+					bgLimo.frames = Paths.getSparrowAtlas('limo/' + FlxG.save.data.campaign + 'Limo','week4');
 					bgLimo.animation.addByPrefix('drive', "background limo pink", 24);
 					bgLimo.animation.play('drive');
 					bgLimo.scrollFactor.set(0.4, 0.4);
@@ -508,7 +508,7 @@ class PlayState extends MusicBeatState
 						add(skyBG);
 	
 						var bgLimo:FlxSprite = new FlxSprite(-200, 480);
-						bgLimo.frames = Paths.getSparrowAtlas('limo/bgLimo','week4');
+						bgLimo.frames = Paths.getSparrowAtlas('limo/' + FlxG.save.data.campaign + 'Limo','week4');
 						bgLimo.animation.addByPrefix('drive', "background limo pink", 24);
 						bgLimo.animation.play('drive');
 						bgLimo.scrollFactor.set(0.4, 0.4);
@@ -621,7 +621,7 @@ class PlayState extends MusicBeatState
 					bg.updateHitbox();
 					add(bg);
 
-					var evilTree:FlxSprite = new FlxSprite(300, -300).loadGraphic(Paths.image('christmas/evilTree','week5'));
+					var evilTree:FlxSprite = new FlxSprite(300, -300).loadGraphic(Paths.image('christmas/' + FlxG.save.data.campaign + 'Tree','week5'));
 					evilTree.antialiasing = true;
 					evilTree.scrollFactor.set(0.2, 0.2);
 					add(evilTree);
@@ -886,6 +886,8 @@ class PlayState extends MusicBeatState
 
 		
 		boyfriend = new Boyfriend(758, 430, SONG.player1);
+		if (FlxG.save.data.campaign == 'fubuki')
+			boyfriend.y = 380;
 
 		// REPOSITIONING PER STAGE
 		switch (curStage)
@@ -1743,7 +1745,7 @@ class PlayState extends MusicBeatState
 				
 					case 'normal':
 						
-						babyArrow.frames = Paths.getSparrowAtlas('NOTE_assets');
+						babyArrow.frames = Paths.getSparrowAtlas('notes/' + FlxG.save.data.noteStyle + '/NOTE_assets','shared');
 						babyArrow.animation.addByPrefix('green', 'arrowUP');
 						babyArrow.animation.addByPrefix('blue', 'arrowDOWN');
 						babyArrow.animation.addByPrefix('purple', 'arrowLEFT');
@@ -1777,7 +1779,7 @@ class PlayState extends MusicBeatState
 							}
 	
 					default:
-						babyArrow.frames = Paths.getSparrowAtlas('NOTE_assets');
+						babyArrow.frames = Paths.getSparrowAtlas('notes/' + FlxG.save.data.noteStyle + '/NOTE_assets','shared');
 						babyArrow.animation.addByPrefix('green', 'arrowUP');
 						babyArrow.animation.addByPrefix('blue', 'arrowDOWN');
 						babyArrow.animation.addByPrefix('purple', 'arrowLEFT');
@@ -3875,6 +3877,14 @@ class PlayState extends MusicBeatState
 			if (curBeat % 2 == 0 && dad.animOffsets.exists('danceRight'))
 				dad.playAnim('danceRight');
 		}
+
+		if (curSong == 'Glasses' && dad.curCharacter == 'gf') {
+			if (curBeat % 2 == 1 && dad.animOffsets.exists('danceLeft'))
+				dad.playAnim('danceLeft');
+			if (curBeat % 2 == 0 && dad.animOffsets.exists('danceRight'))
+				dad.playAnim('danceRight');
+		}
+
 
 		if (SONG.notes[Math.floor(curStep / 16)] != null)
 		{

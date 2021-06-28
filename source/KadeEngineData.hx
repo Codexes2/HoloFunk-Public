@@ -93,6 +93,12 @@ class KadeEngineData
 
 		if (FlxG.save.data.optimize == null)
 			FlxG.save.data.optimize = false;
+
+		if (FlxG.save.data.glasses == null)
+			FlxG.save.data.glasses = false;
+
+		if (FlxG.save.data.noteStyle == null)
+			FlxG.save.data.noteStyle = 'holofunk';
 		
 		var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
 		

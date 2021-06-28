@@ -1,5 +1,6 @@
 package;
 
+import haxe.EntryPoint;
 import lime.app.Application;
 import lime.system.DisplayMode;
 import flixel.util.FlxColor;
@@ -697,4 +698,75 @@ class CamZoomOption extends Option
 	{
 		return "Camera Zoom " + (!FlxG.save.data.camzoom ? "off" : "on");
 	}
+}
+class NoteStyle extends Option
+{
+	var HolofunkNote:Bool;
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+
+		if (FlxG.save.data.noteStyle == 'holofunk')
+			HolofunkNote = true;
+		else
+			HolofunkNote = false;
+	}
+	
+	public override function press():Bool
+	{
+		HolofunkNote = !HolofunkNote;
+		if (HolofunkNote == true)
+			FlxG.save.data.noteStyle = 'holofunk';
+		else
+			FlxG.save.data.noteStyle = 'vanilla';
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Note Style " + (FlxG.save.data.noteStyle);
+	}	
+}
+class CharacterSel extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	
+	public override function press()
+	{
+		FlxG.switchState(new CharacterSelection());
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Current Campaign " + (FlxG.save.data.campaign);
+	}	
+}
+class EraseSettings extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	
+	public override function press()
+	{
+		FlxG.save.erase();
+		FlxG.switchState(new TitleState());
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "R E S E T";
+	}	
 }

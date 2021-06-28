@@ -1,6 +1,7 @@
 package;
 
 import flixel.FlxSprite;
+import flixel.FlxG;
 
 class HealthIcon extends FlxSprite
 {
@@ -13,7 +14,7 @@ class HealthIcon extends FlxSprite
 	{
 		super();
 		
-		loadGraphic(Paths.image('iconGrid'), true, 150, 150);
+		loadGraphic(Paths.image( FlxG.save.data.campaign + '/iconGrid'), true, 150, 150);
 
 		antialiasing = true;
 		animation.add('bf', [0, 1], 0, false, isPlayer);

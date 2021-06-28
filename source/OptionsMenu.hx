@@ -40,6 +40,7 @@ class OptionsMenu extends MusicBeatState
 			new CustomizeGameplay("Drag'n'Drop Gameplay Modules around to your preference")
 		]),
 		new OptionCategory("Appearance", [
+			new NoteStyle("Change note appearance."),
 			new DistractionsAndEffectsOption("Toggle stage distractions that can hinder your gameplay."),
 			new CamZoomOption("Toggle the camera zoom in-game."),
 			#if desktop
@@ -52,6 +53,7 @@ class OptionsMenu extends MusicBeatState
 		]),
 		
 		new OptionCategory("Misc", [
+			new CharacterSel("Change current campaign"),
 			#if desktop
 			new FPSOption("Toggle the FPS Counter"),
 			new ReplayOption("View replays"),
@@ -62,7 +64,8 @@ class OptionsMenu extends MusicBeatState
 			new ShowInput("Display every single input in the score screen."),
 			new Optimization("No backgrounds, no characters, centered notes, no player 2."),
 			new BotPlay("Showcase your charts and mods with autoplay."),
-		])
+			new EraseSettings("Reset all data saved -- FOR DEBUG PURPOSE ONLY!")
+		]),
 		
 	];
 
@@ -77,7 +80,7 @@ class OptionsMenu extends MusicBeatState
 	override function create()
 	{
 		instance = this;
-		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image("menuDesat"));
+		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image(FlxG.save.data.campaign + "/menuDesat"));
 
 		menuBG.color = 0xFFea71fd;
 		menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));

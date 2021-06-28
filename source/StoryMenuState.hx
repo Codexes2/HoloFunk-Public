@@ -33,6 +33,7 @@ class StoryMenuState extends MusicBeatState
 		['Cocoa', 'Eggnog', 'Winter Horrorland'],
 		['Senpai', 'Roses', 'Thorns']
 	];
+	
 	var curDifficulty:Int = 1;
 
 	public static var weekUnlocked:Array<Bool> = [true, true, true, true, true, true, true];
@@ -75,6 +76,14 @@ class StoryMenuState extends MusicBeatState
 
 	override function create()
 	{
+		if (FlxG.save.data.campaign == 'fubuki' && FlxG.save.data.glasses == true)
+			{
+			weekData.push(["Glasses"]);
+			weekCharacters.push(['', 'bf', 'gf']);
+			weekNames.push("Glasses are very versatile");
+			weekUnlocked.push(true);
+			}
+
 		#if windows
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Story Mode Menu", null);

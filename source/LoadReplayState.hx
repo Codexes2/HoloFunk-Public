@@ -31,7 +31,7 @@ class LoadReplayState extends MusicBeatState
 	var poggerDetails:FlxText;
 	override function create()
 	{
-		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image(FlxG.save.data.campaign + '/menuDesat'));
         #if sys
 		controlsStrings = sys.FileSystem.readDirectory(Sys.getCwd() + "/assets/replays/");
         #end
