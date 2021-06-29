@@ -1,4 +1,4 @@
-![Kade Engine logo](https://github.com/KeatonHoshida/HoloFunk/blob/master/assets/preload/images/logo.png?raw=true)
+![Kade Engine logo](https://github.com/Awoo2u/HoloFunk-Developer/blob/master/assets/preload/images/logo.png?raw=true)
 
 # Hololive Funkin'
 ## Friday Night Funkin'
