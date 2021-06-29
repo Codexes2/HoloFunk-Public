@@ -29,6 +29,12 @@ If you're looking for documentation, changelogs, or guides, you can find those o
 	 - The deuteragonist of the main campaign, this universe's version of the bear-seal-alien idol that hundreds of thousands of Hololive fans know and love. Scatterbrained, optimistic, and convinced she's a "perfect being that consists of all living things", it is Nene that gets her close friend out of the house again and convinces her to try out rapping.
 	 - She is an entirely different entity from the Nene who is associated with Pico of *Pico's School* fame, both of whom exist in the HoloFunk universe.
 	 - Though not without her own romantically-charged hijinks out-of-story, she has a particular softspot for Aloe, but is unaware of the latter's crush on her.
+- **Fubuki Shirakami** (Replacing Boyfriend)
+	 - A fox girl who is not only a member of hololive's first generation of VTubers, but also the first member of a four-girl unit called hololive GAMERS. A few weeks after the start of the Main Campaign, Fubuki was hired (read, manipulated) by a disguised Daddy Dearest (in)to track(ing) down a burglar who allegedly stole something precious from his wife, and is following the footsteps of Aloe and Nene to do so.
+	 - She has a friendly disposition and a number of short-skit videos on Twitter and Youtube, and likes to try out games from several different genres.
+ - **Mio Ookami** (Replacing Girlfriend)
+	 - A "FAQing cute" wolf girl who is part of the hololive GAMERS unit alongside Fubuki. She is often described as mature and responsible by fans and hololivers alike, and this along with other qualities gives her a motherly sort of aura that hasn't gone unnoticed by the fanbase. She was asked by the rest of GAMERS to keep Fubuki out of trouble the fox girl is on the hunt for the 'necklace thief'.
+	 
  - **Calliope Mori** (Week 1)
 	 - HoloFunk's version of *the* rapping reaper of the same name. Seen in a slightly-simplified version of her rapper outfit compared to previous versions which just used her classic costume, Calli is not one to go easy on those that face her in a rap battle. And it shows - she's the hardest opponent in the mod so far!
 	 - Her songs include "Live Again" (Live Again - Bopeebo Remix), "RAP" (失礼しますが、RIP♡ - Fresh Remix), and "Calli Battle" (Off With Their Heads - Dad Battle Remix).
