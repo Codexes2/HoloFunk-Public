@@ -320,6 +320,8 @@ class TitleState extends MusicBeatState
 						trace('outdated lmao! ' + returnedData[0] + ' != ' + MainMenuState.kadeEngineVer);
 						OutdatedSubState.needVer = returnedData[0];
 						OutdatedSubState.currChanges = returnedData[1];
+						if (FlxG.save.data.campaign == null)	// have to load something so the game is playable lul
+							FlxG.save.data.campaign = 'aloe';
 						FlxG.switchState(new OutdatedSubState());
 					}
 					else if (FlxG.save.data.campaign == null)

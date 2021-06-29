@@ -746,7 +746,7 @@ class CharacterSel extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Current Campaign " + (FlxG.save.data.campaign);
+		return "Change current campaign";
 	}	
 }
 class EraseSettings extends Option
